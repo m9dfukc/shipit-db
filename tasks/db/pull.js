@@ -10,9 +10,7 @@ module.exports = function(gruntOrShipit) {
     var localDumpFilePath = path.join(shipit.config.workspace, dumpFile);
 
     var download = function download() {
-      return shipit.remoteCopy(remoteDumpFilePath, localDumpFilePath, {
-        direction: 'remoteToLocal'
-      });
+      return shipit.copyFromRemote(remoteDumpFilePath, localDumpFilePath);
     };
 
     return shipit.db.createDirs()
