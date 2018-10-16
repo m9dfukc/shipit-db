@@ -28,23 +28,22 @@ module.exports = function (shipit) {
   shipit.initConfig({
     default: {
       db: {
-        ignoreTables: ['some_table'],
-        local: {
-          host     : 'localhost',
-          adapter  : 'mysql',
-          username : 'root',
-          password : 'root',
-          socket   : '/Applications/MAMP/tmp/mysql/mysql.sock',
-          database : 'mysite_local',
-        },
+        ignoreTables: ['some_table']
       }
     },
     staging: {
       servers: 'user@myserver.com',
       db: {
+        adapter  : 'postgres',
+        local: {
+          host     : 'localhost',
+          username : 'root',
+          password : 'root',
+          socket   : '/Applications/MAMP/tmp/mysql/mysql.sock',
+          database : 'mysite_local',
+        },
         remote: {
           host     : '127.0.0.1',
-          adapter  : 'mysql',
           username : 'myusername',
           password : '123password',
           database : 'mysite_staging',
