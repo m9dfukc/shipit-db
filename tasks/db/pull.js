@@ -15,7 +15,7 @@ module.exports = function(gruntOrShipit) {
     };
 
     var ok = await prompt({
-      question: 'This task is destuctive, there is no rollback as of now!\nAre you sure you want to pull remote db into local? (y/n)'
+      question: 'This task is destructive, there is no rollback as of now!\nAre you sure you want to pull remote db into local? (y/n)'
     });
     if (ok) {
       return shipit.db.createDirs()
