@@ -27,9 +27,7 @@ module.exports = function (shipit) {
 
   shipit.initConfig({
     default: {
-      db: {
-        ignoreTables: ['some_table']
-      }
+      ...
     },
     staging: {
       servers: 'user@myserver.com',
@@ -39,7 +37,6 @@ module.exports = function (shipit) {
           host     : 'localhost',
           username : 'root',
           password : 'root',
-          socket   : '/Applications/MAMP/tmp/mysql/mysql.sock',
           database : 'mysite_local',
         },
         remote: {
@@ -49,6 +46,9 @@ module.exports = function (shipit) {
           database : 'mysite_staging',
         }
       }
+    },
+    production: {
+      ...
     }
   });
 };
@@ -67,12 +67,6 @@ shipit staging db:pull
 ```
 
 ## Options (`shipit.config.db`)
-
-### `db.ignoreTables`
-
-Type: `Array`
-
-An array of database tables to ignore.
 
 ### `db.local` \ `db.remote`
 
